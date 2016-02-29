@@ -1,0 +1,68 @@
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+@import "base/base";
+@import "animate/animate";
+@import "partials/raindropsBg";
+@import "partials/logo";
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.logo {
+    width: 100%;
+    @include outer-container(90%);
+    .one {
+        @include span-columns(6);
+        width: 14%;
+    }
+    .two {
+        @include span-columns(6);
+        width: 80%;
+    }
+    .one,
+    .two {
+        @media screen and (max-width: 500px) {
+            @include span-columns(12 of 12);
+        }
+    }
+    .one {
+        @media screen and (max-width: 500px) {
+            width: 50%;
+            margin-left: 25%;
+        }
+    }
+}
+
+// center
+@mixin center($axis: "both") {
+    position: absolute;
+    @if $axis=="y" {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    @if $axis=="x" {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    @if $axis=="both" {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+
+.centerer {
+    @include center;
+}

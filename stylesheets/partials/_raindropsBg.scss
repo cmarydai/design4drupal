@@ -1,0 +1,40 @@
+body {
+    background: #D5DCE0;
+}
+
+.droplet {
+    position: absolute;
+    height: 4rem;
+    border-radius: .4rem;
+    border: .5em solid #2c97de;
+    top: 0;
+    background-color: #2C97DE;
+    animation: rain 1s infinite;
+}
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 -100px;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+.rain {
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+    background-image: url(../../raindrops.svg);
+    background-position: 0px 0px;
+    background-repeat: repeat;
+    animation: animatedBackground 2s linear infinite;
+    animation-play-state: paused;
+-webkit-animation-play-state: paused;
+}
+
+.rain:hover {
+
+    animation-play-state: running;
+-webkit-animation-play-state: running;
+}
